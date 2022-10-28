@@ -20,23 +20,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <nav>
-          <div className="navContainer">
-            <div className="logo">
-              <a>
+        <nav className="w-full bg-white/95 shadow-[0_0_20px_rgb(30,34,40,0.06)] fixed z-[1008] top-0 left-0 flex flex-wrap items-center justify-between">
+          <div className="flex flex-no-wrap items-center justify-between relative pl-3 pr-3 w-full mr-auto ml-auto">
+            <div className="pt-5 pb-5 w-full whitespace-no-wrap">
+              <a className="text-indigo-700 no-underline">
                 <Image
                   src={logo}
                   alt="Sandbox"
-                  // width={500} automatically provided
-                  // height={500} automatically provided
-                  // blurDataURL="data:..." automatically provided
-                  // placeholder="blur" // Optional blur-up while loading
+                  className="text-indigo-700 no-underline w-32 h-6"
                 />
               </a>
             </div>
-            <div className="collapsibleItems"></div>
-            <div className="socials">
-              <ul>
+            <div className="collapsibleItems">
+              <h1> item 1</h1>
+            </div>
+            <div className="ml-auto w-full flex">
+              <ul className="ml-4 items-center flex-row flex pl-0 mr-4 mb-0 mt-0list-none">
                 <li>
                   <nav>
                     <a href="">
@@ -60,21 +59,8 @@ export default function Home() {
             </div>
           </div>
         </nav>
-        <div></div>
-        <footer></footer>
+        <div> section2</div>
       </>
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 }

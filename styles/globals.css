@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    font-family: Manrope, sans-serif;
+    font-family: Urbanist, sans-serif;
   }
   :root {
     --bs-gray-100: #fefefe;
@@ -109,6 +109,9 @@
     --bs-code-color: #60697b;
     --bs-highlight-bg: #fef1de;
   }
+  body {
+    @apply mt-0 font-[var(--bs-body-font-weight)] text-[length:var(--bs-root-font-size)] leading-[var(--bs-body-line-height)] text-[var(--bs-body-color)] bg-[var(--bs-body-bg)];
+  }
   h6,
   .h6,
   h5,
@@ -123,23 +126,18 @@
   .h1 {
     @apply mt-0 mb-2 font-bold leading-5 text-gray-800;
   }
-
-  body {
-    @apply mt-0 font-[var(--bs-body-font-weight)] text-[length:var(--bs-root-font-size)] leading-[var(--bs-body-line-height)] text-[var(--bs-body-color)] bg-[var(--bs-body-bg)];
+  h3 {
+    @apply text-2xl leading-normal font-[600] text-white mb-0;
   }
+
   p {
     @apply mt-0 mb-4;
   }
-  ol,
-  ul {
-    @apply pl-8 mt-0 mb-4;
-  }
+
   a {
-    @apply no-underline text-[color:var(--bs-link-color)];
+    @apply no-underline text-[color:text-white] block;
   }
-  a:hover {
-    @apply text-[color:var(--bs-link-hover-color)];
-  }
+
   img,
   svg {
     @apply align-middle;

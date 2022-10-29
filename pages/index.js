@@ -3,6 +3,11 @@ import Image from 'next/image';
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+import FixedNavBar from '../components/FixedNavBar';
+import MobileNav from '../components/MobileNav';
 import {
   faYoutube,
   faFacebook,
@@ -10,8 +15,27 @@ import {
   faInstagram,
   faDribbble,
 } from '@fortawesome/free-brands-svg-icons';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Home() {
+  const [showFixedNav, setShowFixedNav] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const scrollRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      const entry = entries[0];
+      setShowFixedNav(entry.isIntersecting);
+    });
+    observer.observe(scrollRef.current);
+  }, []);
+
+  const showMenuClickHandler = () => {
+    setShowMobileNav(true);
+  };
+  const hideMenuClickHandler = () => {
+    setShowMobileNav(false);
+  };
+
   return (
     <div>
       <Head>
@@ -20,46 +44,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <nav className="w-full bg-white/95 shadow-[0_0_20px_rgb(30,34,40,0.06)] fixed z-[1008] top-0 left-0 flex flex-wrap items-center justify-between">
-          <div className="flex flex-no-wrap items-center justify-between relative pl-3 pr-3 w-full mr-auto ml-auto">
-            <div className="pt-5 pb-5 w-full whitespace-no-wrap">
-              <a className="text-indigo-700 no-underline">
-                <Image
-                  src={logo}
-                  alt="Sandbox"
-                  className="text-indigo-700 no-underline w-32 h-6"
-                />
-              </a>
-            </div>
-            <div className="collapsibleItems">
-              <h1> item 1</h1>
-            </div>
-            <div className="ml-auto w-full flex">
-              <ul className="ml-4 items-center flex-row flex pl-0 mr-4 mb-0 mt-0list-none">
-                <li>
-                  <nav>
-                    <a href="">
-                      <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                    <a href="">
-                      <FontAwesomeIcon icon={faFacebook} />
-                    </a>
-                    <a href="">
-                      <FontAwesomeIcon icon={faDribbble} />
-                    </a>
-                    <a href="">
-                      <FontAwesomeIcon icon={faInstagram} />
-                    </a>
-                  </nav>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faBars} />
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div> section2</div>
+        {/* {showFixedNav && <ScrollNav />} */}
+        <FixedNavBar
+          showFixedNav={showFixedNav}
+          onShowMenu={showMenuClickHandler}
+        />
+
+        <div className="h-[1000px] bg-red-700"> section2</div>
+        <div className="h-[1000px] bg-green-700" id="section3" ref={scrollRef}>
+          section3
+        </div>
+        {showMobileNav && <MobileNav onHideMenu={hideMenuClickHandler} />}
       </>
     </div>
   );

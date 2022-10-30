@@ -124,7 +124,7 @@
   .h2,
   h1,
   .h1 {
-    @apply mt-0 mb-2 font-bold leading-5 text-gray-800;
+    @apply mt-0 mb-2 font-bold leading-5 tracking-normal;
   }
   h3 {
     @apply text-2xl leading-normal font-[600] text-white mb-0;
@@ -141,5 +141,8 @@
   img,
   svg {
     @apply align-middle;
+  }
+  button {
+    @apply bg-gradient-to-r from-black to-white;
   }
 }

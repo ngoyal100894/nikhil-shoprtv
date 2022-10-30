@@ -7,6 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import FixedNavBar from '../components/FixedNavBar';
+import FixedNavBarClone from '../components/FixedNavBarClone';
 import MobileNav from '../components/MobileNav';
 import {
   faYoutube,
@@ -16,6 +17,7 @@ import {
   faDribbble,
 } from '@fortawesome/free-brands-svg-icons';
 import { useRef, useEffect, useState } from 'react';
+import HeroSection from '../components/HeroSection';
 
 export default function Home() {
   const [showFixedNav, setShowFixedNav] = useState(false);
@@ -44,17 +46,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        {/* {showFixedNav && <ScrollNav />} */}
         <FixedNavBar
           showFixedNav={showFixedNav}
           onShowMenu={showMenuClickHandler}
         />
-
-        <div className="h-[1000px] bg-red-700"> section2</div>
-        <div className="h-[1000px] bg-green-700" id="section3" ref={scrollRef}>
-          section3
+        <div className="content-wrapper">
+          <FixedNavBarClone />
+          <HeroSection />
+          <div className="h-[1000px] bg-red-700"> section2</div>
+          <div
+            className="h-[1000px] bg-green-700"
+            id="section3"
+            ref={scrollRef}
+          >
+            section3
+          </div>
+          {showMobileNav && <MobileNav onHideMenu={hideMenuClickHandler} />}
         </div>
-        {showMobileNav && <MobileNav onHideMenu={hideMenuClickHandler} />}
       </>
     </div>
   );

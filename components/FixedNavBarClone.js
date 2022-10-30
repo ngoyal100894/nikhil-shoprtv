@@ -10,13 +10,10 @@ import {
   faDribbble,
 } from '@fortawesome/free-brands-svg-icons';
 
-const FixedNavBar = (props) => {
+const FixedNavBarClone = (props) => {
   return (
-    <nav
-      className="w-full bg-white/95 shadow-[0_0_20px_rgb(30,34,40,0.06)] fixed z-[1008] top-0 left-0 flex flex-wrap items-center justify-between transition-[display] duration-700 ease-in-out "
-      style={props.showFixedNav ? { display: 'block' } : { display: 'none' }}
-    >
-      <div className="flex flex-no-wrap items-center justify-between relative w-full mr-auto ml-auto pr-[calc(3vw)] pl-[calc(3vw)] md:pr-[calc(6vw)]  md:pl-[calc(6vw)]">
+    <nav className="w-full bg-white/95 shadow-[0_0_20px_rgb(30,34,40,0.06)] z-[10000] top-0 left-0 flex flex-wrap items-center justify-between">
+      <div className="flex flex-no-wrap items-center justify-between relative pr-[calc(3vw)] pl-[calc(3vw)] md:pr-[calc(6vw)]  md:pl-[calc(6vw)] w-full mr-auto ml-auto ">
         <div className="pt-6 pb-6 w-full whitespace-no-wrap">
           <a className="text-indigo-700 no-underline">
             <Image
@@ -59,4 +56,4 @@ const FixedNavBar = (props) => {
   );
 };
 
-export default FixedNavBar;
+export default FixedNavBarClone;

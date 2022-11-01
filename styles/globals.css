@@ -137,6 +137,10 @@
     @apply no-underline text-[color:text-white] block;
   }
 
+  p {
+    @apply text-base;
+  }
+
   img,
   svg {
     @apply align-middle;
@@ -148,9 +152,9 @@
 
 @layer components {
   .section-heading-h2 {
-    @apply text-base uppercase tracking-tight text-[#f857a6] mb-4 leading-snug;
+    @apply text-base font-semibold uppercase tracking-tight text-[#f857a6] mb-4 leading-snug;
   }
   .section-subheading-h3 {
-    @apply text-3xl font-semibold text-[#343f52] mb-11 leading-tight;
+    @apply text-3xl font-medium text-[#343f52] mb-11 leading-tight;
   }
 }

@@ -23,7 +23,7 @@ const UniqueOffering2 = () => {
           <Image
             src={offer2}
             alt="offer-2"
-            className="w-auto h-auto max-w-full"
+            className="w-auto h-auto max-w-full rounded-lg"
           ></Image>
         </figure>
       </div>

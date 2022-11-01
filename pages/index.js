@@ -18,6 +18,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { useRef, useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
+import FeatureSection from '../components/FeatureSection';
 
 export default function Home() {
   const [showFixedNav, setShowFixedNav] = useState(false);
@@ -52,7 +53,11 @@ export default function Home() {
         />
         <div className="content-wrapper">
           <FixedNavBarClone />
-          <HeroSection />
+          <section className="hero-section">
+            <HeroSection />
+          </section>
+
+          <FeatureSection />
           <div className="h-[1000px] bg-red-700"> section2</div>
           <div
             className="h-[1000px] bg-green-700"

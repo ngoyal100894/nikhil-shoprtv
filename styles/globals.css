@@ -127,12 +127,11 @@
     @apply mt-0 mb-2 font-bold leading-5 tracking-normal;
   }
   h3 {
-    @apply text-2xl leading-normal font-[600] text-white mb-0;
+    @apply text-2xl leading-normal font-[600] mb-0;
   }
-
-  p {
-    @apply mt-0 mb-4;
-  }
+  /* h2 {
+    @apply text-base tracking-tight text-[#f857a6] mb-4 leading-snug;
+  } */
 
   a {
     @apply no-underline text-[color:text-white] block;
@@ -144,5 +143,14 @@
   }
   button {
     @apply bg-gradient-to-r from-black to-white;
+  }
+}
+
+@layer components {
+  .section-heading-h2 {
+    @apply text-base uppercase tracking-tight text-[#f857a6] mb-4 leading-snug;
+  }
+  .section-subheading-h3 {
+    @apply text-3xl font-semibold text-[#343f52] mb-11 leading-tight;
   }
 }

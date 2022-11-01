@@ -1,4 +1,7 @@
-const navOptions = {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+export const navOptions = {
   Items: [
     {
       name: 'Demos',
@@ -162,3 +165,42 @@ const navOptions = {
     },
   ],
 };
+
+export const featureList = [
+  {
+    heading: 'Software & Integration',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'Desktop',
+  },
+  {
+    heading: 'Network Security',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'ShieldCheck',
+  },
+  {
+    heading: 'Wireless Networking',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'Network',
+  },
+  {
+    heading: 'Cloud Services',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'Cloud',
+  },
+  {
+    heading: 'IT Solutions',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'IT',
+  },
+  {
+    heading: 'Server Configuration',
+    description:
+      'Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.',
+    iconToShow: 'Server',
+  },
+];
